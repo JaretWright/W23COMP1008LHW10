@@ -36,7 +36,7 @@ public class RectangleTest {
     @org.junit.Test
     public void setWidth() {
         rectangle.setWidth(100);
-        assertEquals(100, rectangle.getWidth());
+        assertEquals(100, rectangle.getWidth(),0.0);
     }
 
     @org.junit.Test
@@ -75,13 +75,13 @@ public class RectangleTest {
     @org.junit.Test
     public void getPerimeter() {
         //rectangle that is 20 x 30, the perimeter should be 20+30+20+30=100
-        assertEquals(100, rectangle.getPerimeter());
+        assertEquals(100, rectangle.getPerimeter(),0.0);
     }
 
     @org.junit.Test
     public void getPerimeterSquare() {
         //rectangle that is 20 x 20, the perimeter should be 20+20+20+20=80
-        assertEquals(80, square.getPerimeter());
+        assertEquals(80, square.getPerimeter(),0.0);
     }
 
 

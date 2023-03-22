@@ -4,8 +4,8 @@ public class Rectangle {
     private double height, width;
 
     public Rectangle(double height, double width) {
-        this.height = height;
-        this.width = width;
+        setHeight(height);
+        setWidth(width);
     }
 
     public double getHeight() {
@@ -13,7 +13,10 @@ public class Rectangle {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        if (height>0)
+            this.height = height;
+        else
+            throw new IllegalArgumentException("height must be greater than 0");
     }
 
     public double getWidth() {
@@ -21,12 +24,15 @@ public class Rectangle {
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if (width>0)
+            this.width = width;
+        else
+            throw new IllegalArgumentException("width must be greater than 0");
     }
 
     public boolean isSquare()
     {
-        return true;
+        return width == height;
     }
 
     public double getArea()
@@ -36,6 +42,6 @@ public class Rectangle {
 
     public double getPerimeter()
     {
-        return 0.0;
+        return 2*width + 2* height;
     }
 }
