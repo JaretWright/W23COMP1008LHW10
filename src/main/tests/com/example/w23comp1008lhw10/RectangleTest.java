@@ -53,6 +53,12 @@ public class RectangleTest {
 
     @org.junit.Test
     public void isSquare() {
+        assertTrue(square.isSquare());
+    }
+
+    @org.junit.Test
+    public void isSquareFalse() {
+        assertFalse(rectangle.isSquare());
     }
 
     @org.junit.Test
@@ -76,6 +82,19 @@ public class RectangleTest {
     public void getPerimeterSquare() {
         //rectangle that is 20 x 20, the perimeter should be 20+20+20+20=80
         assertEquals(80, square.getPerimeter());
+    }
+
+
+    @org.junit.Test
+    public void setWidthZeroConstructor() {
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Rectangle(100,0);});
+    }
+
+    @org.junit.Test
+    public void setHeightZeroConstructor() {
+        Assertions.assertThrows(IllegalArgumentException.class, ()->{
+            new Rectangle(0,10);});
     }
 
 }
